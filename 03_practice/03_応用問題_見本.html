@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>応用問題 - 見本</title>
+    <link rel="stylesheet" href="./base.css">
+    <script src="https://unpkg.com/jquery"></script>
+</head>
+
+<body>
+    <h1>【応用問題】</h1>
+    <ul>
+        <li>解答は各問題のscriptタグ内に記述してください。</li>
+        <li>jQueryのCDNは自分で調べて読み込んでください。</li>
+        <li>セレクタに必要なクラスは自分で書いてください。</li>
+    </ul>
+
+    <section>
+
+        <h2>【問題1】★☆☆</h2>
+        <p>「文字列１」と「文字列２」に入力された文字を結合した値をalertで表示する。</p>
+
+        文字列１：<input type="text" class="js-join1"><br>
+        文字列２：<input type="text" class="js-join2"><br>
+        <button class="js-join-btn">表示</button>
+
+        <script>
+            $(function() {
+                $('.js-join-btn').on('click', function() {
+                    var text1 = $('.js-join1').val();
+                    var text2 = $('.js-join2').val();
+                    alert(text1 + text2);
+                });
+            });
+        </script>
+
+    </section>
+
+    <!-- ============== 問題1ここまで ============== -->
+
+    <section>
+
+        <h2>【問題2】★☆☆</h2>
+        <p>「文字列１」と「文字列２」に入力された数字を足した値をalertで表示する。</p>
+
+        数字１：<input type="text" class="js-sum1"><br>
+        数字２：<input type="text" class="js-sum2"><br>
+        <button class="js-sum-btn">表示</button>
+
+        <script>
+            $(function() {
+                $('.js-sum-btn').on('click', function() {
+                    var num1 = $('.js-sum1').val();
+                    var num2 = $('.js-sum2').val();
+                    alert(Number(num1) + Number(num2));
+                });
+            });
+        </script>
+
+    </section>
+
+    <!-- ============== 問題2ここまで ============== -->
+
+    <section>
+
+        <h2>【問題3】★★☆</h2>
+        <p>数字を入力して追加ボタンを押すと、その数分のリストを追加する。</p>
+
+        <input type="number" min="1" max="10" step="1" value="1" class="js-list-count">個
+        <input type="button" value="追加" class="js-add-btn">
+
+        <ul class="js-list">
+            <li>リスト要素</li>
+        </ul>
+
+        <script>
+            $(function() {
+                $('.js-add-btn').on('click', function() {
+                    var count = $('.js-list-count').val();
+
+                    for (var i = 0; i < count; i++) {
+                        $('.js-list').append('<li>追加リスト要素</li>');
+                    }
+                });
+            });
+        </script>
+
+    </section>
+
+    <!-- ============== 問題3ここまで ============== -->
+
+    <section>
+
+        <h2>【問題4】★★☆</h2>
+        <p>
+            以下の配列を利用してリストボックスを作成する。<br>
+            var listItem = ['リンゴ', 'バナナ', 'ミカン', 'スイカ'];
+        </p>
+
+        <select class="js-select"></select>
+
+        <script>
+            $(function() {
+                var listItem = ['リンゴ', 'バナナ', 'ミカン', 'スイカ'];
+                $.each(listItem, function(index, value) {
+                    $('.js-select').append('<option value="' + value + '">' + value + '</option>');
+                });
+            });
+        </script>
+
+    </section>
+
+
+    <!-- ============== 問題4ここまで ============== -->
+
+    <section>
+
+        <h2>【問題5】★★☆</h2>
+        <p>
+            テキストボックに値が入力されている場合だけボタンを有効にして、<br>
+            ボタンクリックで入力されている文字をalertで表示する。<br>
+            ※buttonに「disabled属性」を追加すると押せないボタンとなる
+        </p>
+
+        <input type="text" class="js-input1">
+        <input type="button" value="ボタン" class="js-input1-btn" disabled="disabled">
+
+        <script>
+            $(function() {
+                $('.js-input1').on('input', function() {
+                    var inputText = $(this).val();
+                    if (inputText) {
+                        $('.js-input1-btn').removeAttr('disabled');
+                    } else {
+                        $('.js-input1-btn').attr('disabled', 'disabled');
+                    }
+                });
+                
+                $('.js-input1-btn').on('click', function() {
+                    var inputVal = $('.js-input1').val();
+                    alert(inputVal);
+                });
+            });
+        </script>
+
+    </section>
+
+    <!-- ============== 問題5ここまで ============== -->
+
+    <section>
+
+        <h2>【問題6】★★☆</h2>
+        <p>テキストボックスに入力されている文字数を表示する。</p>
+
+        <input type="text" class="js-input2"> 文字数：
+        <span class="js-count">0</span>
+
+        <script>
+            $(function() {
+                $('.js-input2').on('input', function() {
+                    var count = $(this).val();
+                    $('.js-count').text(count.length);
+                });
+            });
+        </script>
+
+    </section>
+
+    <!-- ============== 問題6ここまで ============== -->
+
+    <section>
+
+        <h2>【問題7】★★☆</h2>
+        <p>
+            削除ボタンを押すと確認ダイアログが表示される。<br>
+            【メッセージ】削除していいですか？<br>
+            【動作】OK：要素を削除、キャンセル：なにもしない<br>
+            ※JavaScriptの「confirm」を使用すること
+        </p>
+
+        <div class="square js-square1"></div>
+        <button class="js-remove">削除</button>
+
+        <script>
+            $(function() {
+                $('.js-remove').on('click', function() {
+                    var result = window.confirm('削除していいですか？');
+                    if (result) {
+                        $('.js-square1').remove();
+                    }
+                });
+            });
+        </script>
+
+    </section>
+
+    <!-- ============== 問題7ここまで ============== -->
+
+    <section>
+
+        <h2>【問題8】★★☆</h2>
+        <p>
+            現在時刻を表示ボタンを押すと現在時刻がalertで表示される。<br>
+            例：2019/6/27 10:30:50
+        </p>
+
+        <button class="js-time">現在時刻を表示</button>
+
+        <script>
+            $(function() {
+                $('.js-time').on('click', function() {
+                    var now = new Date();
+                    var y = now.getFullYear();
+                    var m = now.getMonth() + 1;
+                    var d = now.getDate();
+                    var h = now.getHours();
+                    var i = now.getMinutes();
+                    var s = now.getSeconds();
+
+                    alert(y + '/' + m + '/' + d + ' ' + h + ':' + i + ':' + s);
+                });
+            });
+        </script>
+
+    </section>
+
+    <!-- ============== 問題8ここまで ============== -->
+
+    <section>
+
+        <h2>【問題9】★★☆</h2>
+        <p>
+            検索ボタンを押すと「リンゴ」だけmarkタグで囲われる。<br>
+            ※JavaScriptの「replace」を使用する
+        </p>
+
+        <div class="js-name-list">
+            バナナ<br>
+            ミカン<br>
+            リンゴ<br>
+            メロン
+        </div>
+
+        <button class="js-search-btn">検索</button>
+
+        <script>
+            $(function() {
+                $('.js-search-btn').on('click', function() {
+                    var inputText = $('.js-name-list').html();
+                    var replacedText = inputText.replace('リンゴ', '<mark>リンゴ</mark>');
+                    $('.js-name-list').html(replacedText);
+                });
+            });
+        </script>
+
+    </section>
+
+    <!-- ============== 問題9ここまで ============== -->
+
+    <section>
+
+        <h2>【問題10】★★★</h2>
+        <p>
+            テキストボックに入力されている文字を判定する。<br>
+            入力されていない場合：「空です」<br>
+            整数が入力されている場合：「数字です」<br>
+            文字が入力されている場合：「文字です」
+        </p>
+
+        <input type="text" class="js-input3"> 判定：
+        <span class="js-result">空です</span>
+
+        <script>
+            $(function() {
+                $('.js-input3').on('input', function() {
+                    var inputText = $(this).val();
+                    var isNum = inputText.match(/^([1-9]\d*|0)$/) ? true : false;
+                    var message = '文字です';
+                    
+                    if (inputText == '') {
+                        message = '空です';
+                    } else if (isNum) {
+                        message = '数字です';
+                    }
+
+                    $('.js-result').text(message);
+                });
+            });
+        </script>
+
+    </section>
+
+    <!-- ============== 問題10ここまで ============== -->
+
+    <section>
+
+        <h2>【問題11】★★★★</h2>
+        <p>
+            デジタル時計を作る。<br>
+            ※スタイルはお好きにどうぞ。
+        </p>
+
+        現在時刻は
+        <div class="clock">
+            <span class="js-hour"></span>時
+            <span class="js-minutes"></span>分
+            <span class="js-seconds"></span>秒
+        </div>
+        です。
+
+        <script>
+            $(function() {
+                (function clock() {
+                    var now = new Date();
+                    var h = now.getHours();
+                    var i = now.getMinutes();
+                    var s = now.getSeconds();
+
+                    if (i < 10) i = '0' + i;
+                    if (s < 10) s = '0' + s;
+
+                    $('.js-hour').text(h);
+                    $('.js-minutes').text(i);
+                    $('.js-seconds').text(s);
+
+                    setInterval(clock, 1000);
+                }());
+            });
+        </script>
+        
+        <style>
+            .clock {
+                display: inline-block;
+                border: 1px solid #333;
+                border-radius: 5px;
+                padding: 0.4rem 0.6rem;
+            }
+        </style>
+
+    </section>
+
+    <!-- ============== 問題11ここまで ============== -->
+
+</body>
+
+</html>

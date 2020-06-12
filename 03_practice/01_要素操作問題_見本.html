@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>要素操作問題 - 見本</title>
+    <link rel="stylesheet" href="./base.css">
+    <script src="https://unpkg.com/jquery"></script>
+</head>
+
+<body>
+    <h1>【要素操作問題】</h1>
+    <ul>
+        <li>解答は各問題のscriptタグ内に記述してください。</li>
+        <li>セレクタは「js-○○○」で始まるものを使用してください。</li>
+    </ul>
+
+    <section>
+
+        <h2>【問題1】★☆☆</h2>
+        <p>ボタンをクリックして「Hello World!」をalertで表示する。</p>
+
+        <button class="js-alert-btn">表示</button>
+
+        <script>
+            $(function() {
+                $('.js-alert-btn').on('click', function() {
+                    alert('Hello World!');
+                });
+            });
+        </script>
+
+    </section>
+
+    <!-- ============== 問題1ここまで ============== -->
+
+    <section>
+
+        <h2>【問題2】★☆☆</h2>
+        <p>ボタンをクリックして「Hello World!」をconsoleに表示する。</p>
+
+        <button class="js-console-btn">表示</button>
+
+        <script>
+            $(function() {
+                $('.js-console-btn').on('click', function() {
+                    console.log('Hello World!');
+                });
+            });
+        </script>
+
+    </section>
+
+    <!-- ============== 問題2ここまで ============== -->
+
+    <section>
+
+        <h2>【問題3】★☆☆</h2>
+        <p>
+            ボタンをクリックしてテキストを変更する。<br>
+            「明日は晴れでしょう。」→「明日は雨でしょう。」
+        </p>
+
+        <div>明日は<span class="js-whether1">晴れ</span>でしょう。</div>
+
+        <button class="js-whether1-btn">変更</button>
+
+        <script>
+            $(function() {
+                $('.js-whether1-btn').on('click', function() {
+                    $('.js-whether1').text('雨');
+                });
+            });
+        </script>
+
+    </section>
+
+    <!-- ============== 問題3ここまで ============== -->
+
+    <section>
+
+        <h2>【問題4】★☆☆</h2>
+        <p>
+            ボタンをクリックしてタグを追加する。<br>
+            「明日は晴れでしょう。」→「明日は<mark>晴れ</mark>でしょう。」<br>
+            ※「晴れ」の部分をmarkタグで囲む
+        </p>
+
+        <div>明日は<span class="js-whether2">晴れ</span>でしょう。</div>
+
+        <button class="js-change-whether2">追加</button>
+
+        <script>
+            $(function() {
+                $('.js-change-whether2').on('click', function() {
+                    $('.js-whether2').html('<mark>晴れ</mark>');
+                });
+            });
+        </script>
+
+    </section>
+
+    <!-- ============== 問題4ここまで ============== -->
+
+    <section>
+
+        <h2>【問題5】★☆☆</h2>
+        <p>要素をクリックして「background-color」を「red」に変更する。</p>
+
+        <div class="square js-square1"></div>
+
+        <script>
+            $(function() {
+                $('.js-square1').on('click', function() {
+                    $('.js-square1').css('background-color', 'red');
+
+                    // ---- または ----
+                    // $(this).css('background-color', 'red');
+                });
+            });
+        </script>
+
+    </section>
+
+    <!-- ============== 問題5ここまで ============== -->
+
+    <section>
+
+        <h2>【問題6】★☆☆</h2>
+        <p>要素をクリックして「height」の値を取得してalertで表示する。</p>
+
+        <div class="square js-square2"></div>
+
+        <script>
+            $(function() {
+                $('.js-square2').on('click', function() {
+                    var height = $('.js-square2').css('height');
+                    alert(height);
+
+                    // ---- または ----
+                    // var height = $(this).css('height');
+                    // alert(height);
+                });
+            });
+        </script>
+
+    </section>
+
+    <!-- ============== 問題6ここまで ============== -->
+
+    <section>
+
+        <h2>【問題7】★☆☆</h2>
+        <p>ボタンをクリックして要素の「id属性」の値を取得してalertで表示する。</p>
+
+        <div class="js-attr" id="りんご">この要素のid属性の値はなんですか？</div>
+
+        <button class="js-attr-btn">取得</button>
+
+        <script>
+            $(function() {
+                $('.js-attr-btn').on('click', function() {
+                    var attrVal = $('.js-attr').attr('id');
+                    alert(attrVal);
+                });
+            });
+        </script>
+
+    </section>
+
+    <!-- ============== 問題7ここまで ============== -->
+
+    <section>
+
+        <h2>【問題8】★☆☆</h2>
+        <p>ボタンをクリックしてaタグの「href属性」を「https://www.google.com」に変更する。</p>
+
+        <a href="https://www.yahoo.co.jp" target="_blank" class="js-link">googleに飛ぶよ</a>
+
+        <button class="js-link-btn">変更</button>
+
+        <script>
+            $(function() {
+                $('.js-link-btn').on('click', function() {
+                    $('.js-link').attr('href', 'https://www.google.com');
+                });
+            });
+        </script>
+
+    </section>
+
+    <!-- ============== 問題8ここまで ============== -->
+
+    <section>
+
+        <h2>【問題9】★☆☆</h2>
+        <p>ボタンをクリックして入力された文字をalertで表示する。</p>
+
+        <input type="text" class="js-input1">
+        <input type="button" value="表示" class="js-input1-btn">
+
+        <script>
+            $(function() {
+                $('.js-input1-btn').on('click', function() {
+                    var inputVal1 = $('.js-input1').val();
+                    alert(inputVal1);
+                });
+            });
+        </script>
+
+    </section>
+
+    <!-- ============== 問題9ここまで ============== -->
+
+    <section>
+
+        <h2>【問題10】★☆☆</h2>
+        <p>ボタンをクリックして入力された文字を括弧内に表示する。</p>
+
+        <input type="text" class="js-input2">
+        <input type="button" value="表示" class="js-input2-btn">
+
+        <div>入力された文字は「<span class="js-target"></span>」です。</div>
+
+        <script>
+            $(function() {
+                $('.js-input2-btn').on('click', function() {
+                    var inputVal2 = $('.js-input2').val();
+                    $('.js-target').text(inputVal2);
+                });
+            });
+        </script>
+
+    </section>
+
+    <!-- ============== 問題10ここまで ============== -->
+
+    <section>
+
+        <h2>【問題11】★☆☆</h2>
+        <p>ボタンをクリックしてテキストボックスに「ミカン」を表示する。</p>
+
+        <input type="text" class="js-input3">
+        <input type="button" value="表示" class="js-input3-btn">
+
+        <script>
+            $(function() {
+                $('.js-input3-btn').on('click', function() {
+                    $('.js-input3').val('ミカン');
+                });
+            });
+        </script>
+
+    </section>
+
+    <!-- ============== 問題11ここまで ============== -->
+
+    <section>
+
+        <h2>【問題12】★☆☆</h2>
+        <p>ボタンをクリックしてテキストボックスの文字を削除する。</p>
+
+        <input type="text" value="バナナ" class="js-input4">
+        <input type="button" value="削除" class="js-input4-btn">
+
+        <script>
+            $(function() {
+                $('.js-input4-btn').on('click', function() {
+                    $('.js-input4').val('');
+                });
+            });
+        </script>
+
+    </section>
+
+    <!-- ============== 問題12ここまで ============== -->
+
+    <section>
+
+        <h2>【問題13】★☆☆</h2>
+        <p>ボタンをクリックして選択された値をalertで表示する。</p>
+
+        <select class="js-select1">
+            <option value="バナナ">バナナ</option>
+            <option value="リンゴ">リンゴ</option>
+            <option value="スイカ">スイカ</option>
+            <option value="ミカン">ミカン</option>
+        </select>
+
+        <button class="js-select1-btn">表示</button>
+
+        <script>
+            $(function() {
+                $('.js-select1-btn').on('click', function() {
+                    var selectVal = $('.js-select1').val();
+                    alert(selectVal);
+                });
+            });
+        </script>
+
+    </section>
+
+    <!-- ============== 問題13ここまで ============== -->
+
+    <section>
+
+        <h2>【問題14】★☆☆</h2>
+        <p>ボタンをクリックしてスイカ選択する。</p>
+
+        <select class="js-select2">
+            <option value="バナナ">バナナ</option>
+            <option value="リンゴ">リンゴ</option>
+            <option value="スイカ">スイカ</option>
+            <option value="ミカン">ミカン</option>
+        </select>
+
+        <button class="js-select2-btn">選択する</button>
+
+        <script>
+            $(function() {
+                $('.js-select2-btn').on('click', function() {
+                    $('.js-select2').val('スイカ');
+                });
+            });
+        </script>
+
+    </section>
+
+    <!-- ============== 問題14ここまで ============== -->
+
+    <section>
+
+        <h2>【問題15】★☆☆</h2>
+        <p>要素をクリックしてclass「big」を追加する。</p>
+
+        <div class="square js-shape1"></div>
+
+        <script>
+            $(function() {
+                $('.js-shape1').on('click', function() {
+                    $('.js-shape1').addClass('big');
+
+                    // ---- または ----
+                    // $(this).addClass('big');
+                });
+            });
+        </script>
+
+    </section>
+
+    <!-- ============== 問題15ここまで ============== -->
+
+    <section>
+
+        <h2>【問題16】★★☆</h2>
+        <p>要素をクリックしてclass「square」を「circle」に変更する。</p>
+
+        <div class="square js-shape2"></div>
+
+        <script>
+            $(function() {
+                $('.js-shape2').on('click', function() {
+                    $('.js-shape2').removeClass('square');
+                    $('.js-shape2').addClass('circle');
+
+                    // ---- または ----
+                    // $(this).removeClass('square');
+                    // $(this).addClass('circle');
+                });
+            });
+        </script>
+
+    </section>
+
+    <!-- ============== 問題16ここまで ============== -->
+
+    <section>
+
+        <h2>【問題17】★☆☆</h2>
+        <p>ボタンをクリックしてリストの最後にli要素「追加リスト」を追加する。</p>
+
+        <ul class="js-list1">
+            <li>リスト要素</li>
+            <li>リスト要素</li>
+            <li>リスト要素</li>
+        </ul>
+
+        <button class="js-list1-btn">追加</button>
+
+        <script>
+            $(function() {
+                $('.js-list1-btn').on('click', function() {
+                    $('.js-list1').append('<li>追加リスト</li>');
+                });
+            });
+        </script>
+
+    </section>
+
+    <!-- ============== 問題17ここまで ============== -->
+
+    <section>
+
+        <h2>【問題18】★☆☆</h2>
+        <p>ボタンをクリックしてリストの先頭にli要素「追加リスト」を追加する。</p>
+
+        <ul class="js-list2">
+            <li>リスト要素</li>
+            <li>リスト要素</li>
+            <li>リスト要素</li>
+        </ul>
+
+        <button class="js-list2-btn">追加</button>
+
+        <script>
+            $(function() {
+                $('.js-list2-btn').on('click', function() {
+                    $('.js-list2').prepend('<li>追加リスト</li>');
+                });
+            });
+        </script>
+
+    </section>
+
+    <!-- ============== 問題18ここまで ============== -->
+
+    <section>
+
+        <h2>【問題19】★★☆</h2>
+        <p>ボタンをクリックして入力された文字をリストの最後に追加する。</p>
+
+        <ul class="js-list3">
+            <li>リスト要素</li>
+            <li>リスト要素</li>
+            <li>リスト要素</li>
+        </ul>
+
+        <input type="text" class="js-list3-input">
+        <input type="button" value="追加" class="js-list3-btn">
+
+        <script>
+            $(function() {
+                $('.js-list3-btn').on('click', function() {
+                    var inputText = $('.js-list3-input').val();
+                    $('.js-list3').append('<li>' + inputText + '</li>');
+                });
+            });
+        </script>
+
+    </section>
+
+
+    <!-- ============== 問題19ここまで ============== -->
+
+    <section>
+
+        <h2>【問題20】★★☆</h2>
+        <p>ボタンをクリックしてリストの最後のli要素を削除する。</p>
+
+        <ul class="js-list4">
+            <li>リスト要素</li>
+            <li>リスト要素</li>
+            <li>リスト要素</li>
+            <li>リスト要素</li>
+            <li>リスト要素</li>
+        </ul>
+
+        <button class="js-list4-btn">削除</button>
+
+        <script>
+            $(function() {
+                $('.js-list4-btn').on('click', function() {
+                    $('.js-list4 li:last-child').remove();
+                });
+            });
+        </script>
+
+    </section>
+
+    <!-- ============== 問題20ここまで ============== -->
+
+    <section>
+
+        <h2>【問題21】★★☆</h2>
+        <p>クリックしたリスト要素の文字をalertで表示する。</p>
+
+        <ul class="js-list5">
+            <li>バナナ</li>
+            <li>リンゴ</li>
+            <li>スイカ</li>
+            <li>ミカン</li>
+        </ul>
+
+        <script>
+            $(function() {
+                $('.js-list5 > li').on('click', function() {
+                    var clickText = $(this).text();
+                    alert(clickText);
+                });
+            });
+        </script>
+
+    </section>
+
+    <!-- ============== 問題21ここまで ============== -->
+
+    <section>
+
+        <h2>【問題22】★★☆</h2>
+        <p>クリックしたリスト要素を削除する。</p>
+
+        <ul class="js-list6">
+            <li>バナナ</li>
+            <li>リンゴ</li>
+            <li>スイカ</li>
+            <li>ミカン</li>
+        </ul>
+
+        <script>
+            $(function() {
+                $('.js-list6 > li').on('click', function() {
+                    $(this).remove();
+                });
+            });
+        </script>
+
+    </section>
+
+    <!-- ============== 問題22ここまで ============== -->
+
+    <section>
+
+        <h2>【問題23】★★☆</h2>
+        <p>ボタンをクリックするたびに要素を「表示 → 非表示」にする。</p>
+
+        <div class="square js-shape4"></div>
+
+        <button class="js-shape4-btn">切り替え</button>
+
+        <script>
+            $(function() {
+                $('.js-shape4-btn').on('click', function() {
+                    $('.js-shape4').toggle();
+                });
+            });
+        </script>
+
+    </section>
+
+
+    <!-- ============== 問題23ここまで ============== -->
+
+    <section>
+
+        <h2>【問題24】★★★</h2>
+        <p>
+            要素をクリックするたびに「四角 → 丸」にする。<br>
+            ※class「circle」をつけると丸くなる
+        </p>
+
+        <div class="square js-shape3"></div>
+
+        <script>
+            $(function() {
+                $('.js-shape3').on('click', function() {
+                    $(this).toggleClass('circle');
+                });
+            });
+        </script>
+
+    </section>
+
+    <!-- ============== 問題24ここまで ============== -->
+
+
+    <section>
+
+        <h2>【問題25】★★★</h2>
+        <p>ボタンをクリックしてチェックボックスを全て選択する。</p>
+
+        <div class="js-list7">
+            <input type="checkbox">バナナ<br>
+            <input type="checkbox">リンゴ<br>
+            <input type="checkbox">ミカン
+        </div>
+
+        <button class="js-list7-btn">チェックする</button>
+
+        <script>
+            $(function() {
+                $('.js-list7-btn').on('click', function() {
+                    $('.js-list7 input[type="checkbox"]').prop("checked", true);
+                });
+            });
+        </script>
+
+    </section>
+
+    <!-- ============== 問題25ここまで ============== -->
+
+    <section>
+
+        <h2>【問題26】★★★</h2>
+        <p>スライダーの値をtextboxに表示する。</p>
+
+        <input type="range" value="0" min="0" max="10" step="1" class="js-range">
+        <input type="text" class="js-range-input">
+
+        <script>
+            $(function() {
+                var setInputVal = function() {
+                    var rangeVal = $('.js-range').val();
+                    $('.js-range-input').val(rangeVal);
+                }
+
+                setInputVal();
+
+                $('.js-range').on('input', function() {
+                    setInputVal();
+                });
+            });
+        </script>
+
+    </section>
+
+    <!-- ============== 問題26ここまで ============== -->
+
+</body>
+
+</html>

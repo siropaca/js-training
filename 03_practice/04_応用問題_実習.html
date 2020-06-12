@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>応用問題 - 実習</title>
+    <link rel="stylesheet" href="./base.css">
+</head>
+
+<body>
+    <h1>【応用編】JacaScript練習</h1>
+    <ul>
+        <li>解答は各問題のscriptタグ内に記述してください。</li>
+        <li>jQueryのCDNは自分で調べて読み込んでください。</li>
+        <li>セレクタに必要なクラスは自分で書いてください。</li>
+    </ul>
+
+    <section>
+
+        <h2>【問題1】★☆☆</h2>
+        <p>「文字列１」と「文字列２」に入力された文字を結合した値をalertで表示する。</p>
+
+        文字列１：<input type="text" class="js-join1"><br>
+        文字列２：<input type="text" class="js-join2"><br>
+        <button class="js-join-btn">表示</button>
+
+        <script>
+
+        </script>
+
+    </section>
+
+    <!-- ============== 問題1ここまで ============== -->
+
+    <section>
+
+        <h2>【問題2】★☆☆</h2>
+        <p>「文字列１」と「文字列２」に入力された数字を足した値をalertで表示する。</p>
+
+        数字１：<input type="text" class="js-sum1"><br>
+        数字２：<input type="text" class="js-sum2"><br>
+        <button class="js-sum-btn">表示</button>
+
+        <script>
+
+        </script>
+
+    </section>
+
+    <!-- ============== 問題2ここまで ============== -->
+
+    <section>
+
+        <h2>【問題3】★★☆</h2>
+        <p>数字を入力して追加ボタンを押すと、その数分のリストを追加する。</p>
+
+        <input type="number" min="1" max="10" step="1" value="1" class="js-list-count">個
+        <input type="button" value="追加" class="js-add-btn">
+
+        <ul class="js-list">
+            <li>リスト要素</li>
+        </ul>
+
+        <script>
+
+        </script>
+
+    </section>
+
+    <!-- ============== 問題3ここまで ============== -->
+
+    <section>
+
+        <h2>【問題4】★★☆</h2>
+        <p>
+            以下の配列を利用してリストボックスを作成する。<br>
+            var listItem = ['リンゴ', 'バナナ', 'ミカン', 'スイカ'];
+        </p>
+
+        <select class="js-select"></select>
+
+        <script>
+
+        </script>
+
+    </section>
+
+
+    <!-- ============== 問題4ここまで ============== -->
+
+    <section>
+
+        <h2>【問題5】★★☆</h2>
+        <p>
+            テキストボックに値が入力されている場合だけボタンを有効にして、<br>
+            ボタンクリックで入力されている文字をalertで表示する。<br>
+            ※buttonに「disabled属性」を追加すると押せないボタンとなる
+        </p>
+
+        <input type="text" class="js-input1">
+        <input type="button" value="ボタン" class="js-input1-btn" disabled="disabled">
+
+        <script>
+
+        </script>
+
+    </section>
+
+    <!-- ============== 問題5ここまで ============== -->
+
+    <section>
+
+        <h2>【問題6】★★☆</h2>
+        <p>テキストボックスに入力されている文字数を表示する。</p>
+
+        <input type="text" class="js-input2"> 文字数：
+        <span class="js-count">0</span>
+
+        <script>
+
+        </script>
+
+    </section>
+
+    <!-- ============== 問題6ここまで ============== -->
+
+    <section>
+
+        <h2>【問題7】★★☆</h2>
+        <p>
+            削除ボタンを押すと確認ダイアログが表示される。<br>
+            【メッセージ】削除していいですか？<br>
+            【動作】OK：要素を削除、キャンセル：なにもしない<br>
+            ※JavaScriptの「confirm」を使用すること
+        </p>
+
+        <div class="square js-square1"></div>
+        <button class="js-remove">削除</button>
+
+        <script>
+
+        </script>
+
+    </section>
+
+    <!-- ============== 問題7ここまで ============== -->
+
+    <section>
+
+        <h2>【問題8】★★☆</h2>
+        <p>
+            現在時刻を表示ボタンを押すと現在時刻がalertで表示される。<br>
+            例：2019/6/27 10:30:50
+        </p>
+
+        <button class="js-time">現在時刻を表示</button>
+
+        <script>
+
+        </script>
+
+    </section>
+
+    <!-- ============== 問題8ここまで ============== -->
+
+    <section>
+
+        <h2>【問題9】★★★</h2>
+        <p>
+            検索ボタンを押すと「リンゴ」だけmarkタグで囲われる。<br>
+            ※JavaScriptの「replace」を使用する
+        </p>
+
+        <div class="js-name-list">
+            バナナ
+            <br> ミカン
+            <br> リンゴ
+            <br> メロン
+        </div>
+
+        <button class="js-search-btn">検索</button>
+
+        <script>
+
+        </script>
+
+    </section>
+
+    <!-- ============== 問題9ここまで ============== -->
+
+    <section>
+
+        <h2>【問題10】★★★</h2>
+        <p>
+            テキストボックに入力されている文字を判定する。<br>
+            入力されていない場合：「空です」<br>
+            整数が入力されている場合：「数字です」<br>
+            文字が入力されている場合：「文字です」
+        </p>
+
+        <input type="text" class="js-input3"> 判定：
+        <span class="js-result">空です</span>
+
+        <script>
+
+        </script>
+
+    </section>
+
+    <!-- ============== 問題10ここまで ============== -->
+
+    <section>
+
+        <h2>【問題11】★★★</h2>
+        <p>
+            デジタル時計を作る。<br>
+            ※スタイルはお好きにどうぞ。
+        </p>
+
+        現在時刻は
+        <div class="clock">
+            <span class="js-hour"></span>時
+            <span class="js-minutes"></span>分
+            <span class="js-seconds"></span>秒
+        </div>
+        です。
+
+        <script>
+
+        </script>
+
+        <style>
+            .clock {
+                display: inline-block;
+                border: 1px solid #333;
+                border-radius: 5px;
+                padding: 0.4rem 0.6rem;
+            }
+        </style>
+
+    </section>
+
+    <!-- ============== 問題11ここまで ============== -->
+
+</body>
+
+</html>

@@ -1,1 +1,4 @@
-# js-training
+js-traning
+===============
+
+JavaScript練習用のリポジトリです。
