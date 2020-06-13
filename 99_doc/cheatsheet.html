@@ -87,26 +87,22 @@
 </table>
 
 <h2>コメント</h2>
-<code>
-  <pre>
+<pre class="source"><code>
   // 一行コメント
   /*
     複数行コメント
     複数行コメント
   */
-  </pre>
-</code>
+</code></pre>
 
 <h2>変数の宣言</h2>
-<code>
-  <pre>
+<pre class="source"><code>
   // 構文
   var [変数名] = [何かしらのデータ];
 
   // 例
   var age = 18;
-  </pre>
-</code>
+</code></pre>
 
 <h2>変数の命名規則</h2>
 
@@ -120,15 +116,13 @@
   <li>変数名に予約語を使用することはできない</li>
 </ul>
 
-<code>
-  <pre>
+<pre class="source"><code>
   // 使用できる変数名
   key  sum1  _name  $width  sum_all  sumAll  newValue
 
   // 使用できない変数名
   1st（最初の文字が数字） sum-all（ハイフンは使えない） new（予約語）
-  </pre>
-</code>
+</code></pre>
 
 <h3>慣習としての命名規則</h3>
 <ul>
@@ -378,8 +372,7 @@
 </table>
 
 <h2>三項演算子（条件演算子）</h2>
-<code>
-  <pre>
+<pre class="source"><code>
   // 構文
   [結果] = [条件式] ? [true の場合の値] : [false の場合の値]
 
@@ -387,8 +380,7 @@
   var a = 5
   var parity = a %2 == 0 ? '偶数' : '奇数';
   console.log(parity); // 奇数
-  </pre>
-</code>
+</code></pre>
 
 <h2>算術代入演算子</h2>
 <table>
@@ -429,14 +421,12 @@
 </table>
 
 <h2>文字列の操作</h2>
-<code>
-  <pre>
+<pre class="source"><code>
   // 例
   "Hello" + "World!" // Hello World!
   "1" + "2" // 12
   3 + "4" // 34
-  </pre>
-</code>
+</code></pre>
 
 <h2>関係演算子</h2>
 <table>
@@ -477,35 +467,34 @@
       <td>a と b の値が同一でないときは true、それ以外は false</td>
     </tr>
     <tr>
-      <td>&lt;</td>
+      <td>＞</td>
       <td>より小さい</td>
-      <td>a &lt; b</td>
+      <td>a ＞ b</td>
       <td>a の値が b の値より小さいときは true、それ以外は false</td>
     </tr>
     <tr>
-      <td>&gt;</td>
+      <td>＜</td>
       <td>より大きい</td>
-      <td>a &gt; b</td>
+      <td>a ＜ b</td>
       <td>a の値が b の値より大きいときは true、それ以外は false</td>
     </tr>
     <tr>
-      <td>&lt;＝</td>
+      <td>＞＝</td>
       <td>以下</td>
-      <td>a &lt;＝ b</td>
+      <td>a ＞＝ b</td>
       <td>a の値が b の値以下のときは true、それ以外は false</td>
     </tr>
     <tr>
-      <td>&gt;＝</td>
+      <td>＜＝</td>
       <td>以上</td>
-      <td>a &gt;＝ b</td>
+      <td>a ＜＝ b</td>
       <td>a の値が b の値以上のときは true、それ以外は false</td>
     </tr>
   </tbody>
 </table>
 
 <h2>抽象比較と厳密比較</h2>
-<code>
-  <pre>
+<pre class="source"><code>
   // 抽象比較
   1 == 1 // true
   1 == '1' // true
@@ -519,8 +508,7 @@
   1 === true // false
   '' === false // false
   '0' === false // false
-  </pre>
-</code>
+</code></pre>
 
 <h2>論理演算子</h2>
 <table>
@@ -577,8 +565,7 @@
 <h2>制御構文</h2>
 
 <h3>if 文</h3>
-<code>
-  <pre>
+<pre class="source"><code>
   if ([条件式]) {
     // 処理を書く
   } else if ([条件式]) {
@@ -586,12 +573,10 @@
   } else {
     // 処理を書く
   }
-  </pre>
-</code>
+</code></pre>
 
 <h3>switch 文</h3>
-<code>
-  <pre>
+<pre class="source"><code>
   switch([式]) {
     case [値1]:
       // 処理を書く
@@ -602,26 +587,21 @@
     default:
       // 処理を書く
   }
-  </pre>
-</code>
+</code></pre>
 
 <h3>for 文</h3>
-<code>
-  <pre>
+<pre class="source"><code>
   for ([初期化式]; [条件式]; [加算式]) {
     // 処理を書く
   }
-  </pre>
-</code>
+</code></pre>
 
 <h3>while 文</h3>
-<code>
-  <pre>
+<pre class="source"><code>
   while ([条件式]) {
     // 処理を書く
   }
-  </pre>
-</code>
+</code></pre>
 
 <h2>プログラムの記述方法</h2>
 
@@ -631,22 +611,20 @@
   <li>script タグは、body の閉じタグ直前が推奨。</li>
 </ul>
 
-<code>
-  <pre>
-  &lt;head&gt;
+<pre class="source"><code>
+  <head>
     ~
-    &lt;script&gt;
+    <script>
       // 処理を書く
-    &lt;/script&gt;
+    </script>
     ~
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;script&gt;
+  </head>
+  <body>
+    <script>
       // 処理を書く
-    &lt;/script&gt;
-  &lt;/body&gt;
-  </pre>
-</code>
+    </script>
+  </body>
+</code></pre>
 
 <h3>外部ファイルに記述する</h3>
 <ul>
@@ -658,20 +636,18 @@
   <li>script タグは、body の閉じタグ直前が推奨。</li>
 </ul>
 
-<code>
-  <pre>
-  &lt;head&gt;
-    &lt;script src="[js ファイルのパス]"&gt;&lt;/script&gt;
-    &lt;!-- または --&gt;
-    &lt;script src="[js ファイルの URL]"&gt;&lt;/script&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;script src="[js ファイルのパス]"&gt;&lt;/script&gt;
-    &lt;!-- または --&gt;
-    &lt;script src="[js ファイルの URL]"&gt;&lt;/script&gt;
-  &lt;/body&gt;
-  </pre>
-</code>
+<pre class="source"><code>
+  <head>
+    <script src="[js ファイルのパス]"></script>
+    <!-- または -->
+    <script src="[js ファイルの URL]"></script>
+  </head>
+  <body>
+    <script src="[js ファイルのパス]"></script>
+    <!-- または -->
+    <script src="[js ファイルの URL]"></script>
+  </body>
+</code></pre>
 
 <h3>HTML 属性に記述する</h3>
 <ul>
@@ -679,14 +655,12 @@
   <li>ソースコードの可読性が悪くなるため、非推奨。</li>
 </ul>
 
-<code>
-  <pre>
+<pre class="source"><code>
   // 属性
   on[イベント名]="[js の処理]"
 
   // 例
-  &lt;button onclick="alert('クリック！');"&gt;ボタン&lt;/button&gt;
-  </pre>
-</code>
+  <button onclick="alert('クリック！');">ボタン</button>
+</code></pre>
 
 「配列」「オブジェクト」「関数」
