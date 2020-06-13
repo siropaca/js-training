@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript チートシート</title>
+  </head>
+  <body>
+    <h2>要素の取得</h2>
+
+    <h3>Pure JavaScript</h3>
+    <code>
+      <pre>
+      // 構文
+      document.querySelector('[css セレクタ]'); // 最初の一つを取得
+      document.querySelectorAll('[css セレクタ]'); // すべて取得
+
+      // 例
+      document.querySelector('#main .container'); // 最初の一つを取得
+      document.querySelectorAll('#main .container'); // すべて取得
+      </pre>
+    </code>
+
+    <h3>jQuery</h3>
+    <code>
+      <pre>
+      // 構文
+      $('[CSS のセレクタ]')
+
+      // 例
+      $('#main .container h1')
+      </pre>
+    </code>
+
+    <h2>イベントの設定</h2>
+
+    <h3>Pure JavaScript</h3>
+    <code>
+      <pre>
+      // 構文
+      [要素].addEventListener('[イベント名]', function () {
+        // イベントが発火したときの処理
+      });
+
+      // 例
+      var button document.getElementById('button');
+      button.addEventListener('click', function () {
+        alert('クリックされた！');
+      });
+      </pre>
+    </code>
+
+    <h3>jQuery</h3>
+    <code>
+      <pre>
+      // 構文
+      [jQuery 要素].[イベント名](function () {
+        // イベントが発火したときの処理
+      });
+
+      // 例
+      $('#button').click(function () {
+        alert('クリックされた！');
+      });
+      </pre>
+    </code>
+
+    <h2>代表的なイベントの種類</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>イベント名</th>
+          <th>発火タイミング</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ready</td>
+          <td>DOMツリーの構築が完了したときに発火</td>
+        </tr>
+        <tr>
+          <td>load</td>
+          <td>リソースの読み込みが完了した時に発火</td>
+        </tr>
+        <tr>
+          <td>error</td>
+          <td>リソースの読み込みに失敗した時に発火</td>
+        </tr>
+        <tr>
+          <td>scroll</td>
+          <td>ドキュメントがスクロールした時に発火</td>
+        </tr>
+        <tr>
+          <td>resize</td>
+          <td>ウィンドウサイズが変更された時に発火</td>
+        </tr>
+        <tr>
+          <td>click</td>
+          <td>要素がクリックされた時に発火</td>
+        </tr>
+        <tr>
+          <td>dblclick</td>
+          <td>要素がダブルクリックされた時に発火</td>
+        </tr>
+        <tr>
+          <td>mousedown</td>
+          <td>要素上でマウスが押された時に発火</td>
+        </tr>
+        <tr>
+          <td>mouseup</td>
+          <td>要素上でマウスが押され、上がった時に発火</td>
+        </tr>
+        <tr>
+          <td>mousemove</td>
+          <td>要素上でマウスが移動している時に発火</td>
+        </tr>
+        <tr>
+          <td>mouseover</td>
+          <td>マウスが要素に入った時に発火。子要素でも発火</td>
+        </tr>
+        <tr>
+          <td>mouseout</td>
+          <td>マウスが要素から外れた時に発火。子要素でも発火</td>
+        </tr>
+        <tr>
+          <td>focus</td>
+          <td>要素がフォーカスを得た時に発火</td>
+        </tr>
+        <tr>
+          <td>blur</td>
+          <td>要素がフォーカスを失った時に発火</td>
+        </tr>
+        <tr>
+          <td>change</td>
+          <td>要素の内容が変更され、フォーカスが外れた時に発火</td>
+        </tr>
+        <tr>
+          <td>input</td>
+          <td>要素の内容が変更された時に発火</td>
+        </tr>
+        <tr>
+          <td>submit</td>
+          <td>フォームが送信された時に発火</td>
+        </tr>
+        <tr>
+          <td>keydown</td>
+          <td>キーを押しこんだ時に発火。押している間ずっと発火</td>
+        </tr>
+        <tr>
+          <td>keyup</td>
+          <td>キーが上がった時に発火</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>読み込み完了</h2>
+
+    <code>
+      <pre>
+      // DOM がすべて読み込まれたときに発火
+      $(document).ready(function() {
+        // 処理を書く
+      });
+
+      // ready の省略型
+      $(function(){
+        // 処理を書く
+      });
+
+      // 画像など全てのリソースが読み込まれた発火
+      $(window).load(function(){
+        // 処理を書く
+      });
+      </pre>
+    </code>
+
+    <h2>属性の操作</h2>
+
+    <h3>属性の取得</h3>
+    <code>
+      <pre>
+      // 構文
+      $('[セレクタ]').attr('[属性名]');
+
+      // 例
+      $('#textbox').attr('value');
+      </pre>
+    </code>
+
+    <h3>属性の設定</h3>
+    <code>
+      <pre>
+      // 構文
+      $('[セレクタ]').attr('[属性名]', '[属性値]');
+
+      // 例
+      $('#textbox').attr('value', 'jsから入力！');
+      </pre>
+    </code>
+
+    <h3>属性の削除</h3>
+    <code>
+      <pre>
+      // 構文
+      $('[セレクタ]').removeAttr('[属性名]');
+
+      // 例
+      $('#button').removeAttr('disabled');
+      </pre>
+    </code>
+
+    <h2>スタイル関連の操作</h2>
+
+    <h3>CSS の追加</h3>
+    <code>
+      <pre>
+      // 構文
+      $('[セレクタ]').css('[プロパティ名]', '[値]');
+
+      // 例
+      $('.button').css('color', 'red');
+      </pre>
+    </code>
+
+    <h3>CSS の削除</h3>
+    <code>
+      <pre>
+      // 構文
+      $('[セレクタ]').css('[プロパティ名]', '');
+
+      // 例
+      $('.button').css('color', '');
+      </pre>
+    </code>
+
+    <h3>クラスの追加</h3>
+    <code>
+      <pre>
+      // 構文
+      $('[セレクタ]').addClass('[クラス名]');
+
+      // 例
+      $('#button').addClass('active');
+      </pre>
+    </code>
+
+    <h3>クラスの削除</h3>
+    <code>
+      <pre>
+      // 構文
+      $('[セレクタ]').removeClass('[クラス名]');
+
+      // 例
+      $('#button').removeClass('active');
+      </pre>
+    </code>
+
+    <h2>要素の操作</h2>
+
+    <h3>要素の追加</h3>
+    <code>
+      <pre>
+      // 構文
+      $('[セレクタ]').append('[要素]'); // 要素内の最後に追加
+      $('[セレクタ]').prepend('[要素]'); // 要素内の最初に追加
+
+      $('[セレクタ]').after('[要素]'); // 要素の次に追加
+      $('[セレクタ]').before('[要素]'); // 要素の前に追加
+
+      // 例
+      $('#list').append('<li>追加されたよ！</li>');
+      $('#list').prepend('<li>追加されたよ！</li>');
+
+      $('#list').after('<p>追加されたよ！</p>');
+      $('#list').before('<p>追加されたよ！</p>');
+      </pre>
+    </code>
+
+    <h3>要素の削除</h3>
+    <code>
+      <pre>
+      // 構文
+      $('[セレクタ]').remove(); // 要素を削除
+      $('[セレクタ]').empty(); // 要素の中身を削除
+
+      // 例
+      $('.container').remove();
+      $('.container').empty();
+      </pre>
+    </code>
+  </body>
+</html>

@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript チートシート</title>
+  </head>
+  <body>
+    <h2>JavaScript / ECMAScript のバージョン</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>バージョン</th>
+          <th>略称</th>
+          <th>公開日</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- JavaScript -->
+        <tr>
+          <td>JavaScript 1.0</td>
+          <td>-</td>
+          <td>1996年3月</td>
+        </tr>
+        <tr>
+          <td>JavaScript 1.1</td>
+          <td>-</td>
+          <td>1996年8月</td>
+        </tr>
+        <tr>
+          <td>JavaScript 1.2</td>
+          <td>-</td>
+          <td>1997年7月</td>
+        </tr>
+        <tr>
+          <td>JavaScript 1.3</td>
+          <td>-</td>
+          <td>1998年10月</td>
+        </tr>
+        <!-- ECMAScript -->
+        <tr>
+          <td>ECMAScript 1st Edition</td>
+          <td>ES</td>
+          <td>1997年6月</td>
+        </tr>
+        <tr>
+          <td>ECMAScript 2nd Edition</td>
+          <td>ES2</td>
+          <td>1998年6月</td>
+        </tr>
+        <tr>
+          <td>ECMAScript 3rd Edition</td>
+          <td>ES3</td>
+          <td>1999年12月</td>
+        </tr>
+        <tr>
+          <td>ECMAScript 4th Edition</td>
+          <td>ES4</td>
+          <td>（放棄）</td>
+        </tr>
+        <tr>
+          <td>ECMAScript 5th Edition</td>
+          <td>ES5</td>
+          <td>2009年12月</td>
+        </tr>
+        <tr>
+          <td>ECMAScript 5.1th Edition</td>
+          <td>ES5.1</td>
+          <td>2009年12月</td>
+        </tr>
+        <tr>
+          <td>ECMAScript 2015</td>
+          <td>ES2015（別名ES6）</td>
+          <td>2011年6月</td>
+        </tr>
+        <tr>
+          <td>ECMAScript 2016</td>
+          <td>ES2016（別名ES7）</td>
+          <td>2016年6月</td>
+        </tr>
+        <tr>
+          <td>ECMAScript 2017</td>
+          <td>ES2017（別名ES8）</td>
+          <td>2017年6月</td>
+        </tr>
+        <tr>
+          <td>ECMAScript 2018</td>
+          <td>ES2018（別名ES9）</td>
+          <td>2018年6月</td>
+        </tr>
+        <tr>
+          <td>ECMAScript 2019</td>
+          <td>ES2019（別名ES10）</td>
+          <td>2019年6月</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>コメント</h2>
+    <code>
+      <pre>
+      // 一行コメント
+      /*
+        複数行コメント
+        複数行コメント
+      */
+      </pre>
+    </code>
+
+    <h2>変数の宣言</h2>
+    <code>
+      <pre>
+      // 構文
+      var [変数名] = [何かしらのデータ];
+
+      // 例
+      var age = 18;
+      </pre>
+    </code>
+
+    <h2>変数の命名規則</h2>
+
+    <h3>仕様としての命名規則</h3>
+    <ul>
+      <li>
+        使用できる文字は、英文字（a-z,
+        A-Z）、数字（0-9）、アンダースコア（_）、ドル記号（$）のいずれかである
+      </li>
+      <li>１文字目に数字を使用することはできない</li>
+      <li>変数名に予約語を使用することはできない</li>
+    </ul>
+
+    <code>
+      <pre>
+      // 使用できる変数名
+      key  sum1  _name  $width  sum_all  sumAll  newValue
+
+      // 使用できない変数名
+      1st（最初の文字が数字） sum-all（ハイフンは使えない） new（予約語）
+      </pre>
+    </code>
+
+    <h3>慣習としての命名規則</h3>
+    <ul>
+      <li>キャメルケースで変数の意味が理解できる名前をつける</li>
+      <li>基本的に英単語を使う</li>
+      <li>ループカウンタ変数には、i、j、k などを使う</li>
+      <li>定数は大文字にする（例：MAX_SIZE）</li>
+      <li>
+        真偽値を表す変数は、先頭に is や has を使う（例：isMouseDown, hasError）
+      </li>
+      <li>コンストラクタの名前には、アッパーキャメル記法を使う</li>
+    </ul>
+
+    <h2>命名記法</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>名称</th>
+          <th>規則</th>
+          <th>例</th>
+          <th>言語</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>キャメルケース（ローワーキャメル記法）</td>
+          <td>2つ目以降の単語の先頭を大文字にする</td>
+          <td>newGame createLifeGame</td>
+          <td>JavaScript など</td>
+        </tr>
+        <tr>
+          <td>パスカルケース（アッパーキャメル記法）</td>
+          <td>全単語の先頭文字を大文字にする</td>
+          <td>NewGame CreateLifeGame</td>
+          <td>JavaScript など</td>
+        </tr>
+        <tr>
+          <td>スネークケース</td>
+          <td>単語幹をアンダースコアで区切る</td>
+          <td>new_game create_life_game</td>
+          <td>PHP や DB など</td>
+        </tr>
+        <tr>
+          <td>ケバブケース</td>
+          <td>単語幹をハイフンで区切る</td>
+          <td>new-game create-life-game</td>
+          <td>CSS など</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>予約語</h2>
+    <ul style="column-count: 3;">
+      <li>break</li>
+      <li>case</li>
+      <li>catch</li>
+      <li>continue</li>
+      <li>debugger</li>
+      <li>default</li>
+      <li>delete</li>
+      <li>do</li>
+      <li>else</li>
+      <li>finally</li>
+      <li>for</li>
+      <li>function</li>
+      <li>if</li>
+      <li>in</li>
+      <li>instanceof</li>
+      <li>new</li>
+      <li>return</li>
+      <li>switch</li>
+      <li>this</li>
+      <li>throw</li>
+      <li>try</li>
+      <li>typeof</li>
+      <li>var</li>
+      <li>void</li>
+      <li>while</li>
+      <li>with</li>
+      <li>class</li>
+      <li>enum</li>
+      <li>export</li>
+      <li>extends</li>
+      <li>import</li>
+      <li>super</li>
+      <li>implements</li>
+      <li>interface</li>
+      <li>let</li>
+      <li>package</li>
+      <li>private</li>
+      <li>protected</li>
+      <li>public</li>
+      <li>static</li>
+      <li>yield</li>
+    </ul>
+
+    <h2>グローバル変数 / グローバル関数</h2>
+    <ul style="column-count: 3;">
+      <li>arguments</li>
+      <li>Array</li>
+      <li>Boolean</li>
+      <li>Date</li>
+      <li>decodeURI</li>
+      <li>decodeURICompornet</li>
+      <li>encodeURI</li>
+      <li>encodeURICompornet</li>
+      <li>Error</li>
+      <li>eval</li>
+      <li>EvalError</li>
+      <li>Function</li>
+      <li>Infinity</li>
+      <li>isFinite</li>
+      <li>isNaN</li>
+      <li>JSON</li>
+      <li>Math</li>
+      <li>NaN</li>
+      <li>Number</li>
+      <li>Object</li>
+      <li>parseFloat</li>
+      <li>parseInt</li>
+      <li>RangeError</li>
+      <li>RefferenceError</li>
+      <li>RegExp</li>
+      <li>String</li>
+      <li>SyntaxError</li>
+      <li>TypeError</li>
+      <li>undefined</li>
+      <li>URIError</li>
+    </ul>
+
+    <h2>データ型</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>データ型</th>
+          <th>型（タイプ）</th>
+          <th>概要</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Boolean（ブーリアン）</td>
+          <td>プリミティブ</td>
+          <td>真偽値。true、false のいずれか</td>
+        </tr>
+        <tr>
+          <td>Number（ナンバー）</td>
+          <td>プリミティブ</td>
+          <td>数値型。整数、浮動小数点の数値、Infinity、NaN など</td>
+        </tr>
+        <tr>
+          <td>String（ストリング）</td>
+          <td>プリミティブ</td>
+          <td>文字列型。文字や文字列</td>
+        </tr>
+        <tr>
+          <td>Null（ヌル）</td>
+          <td>プリミティブ</td>
+          <td>何もない、あるいは無効である状態を表す</td>
+        </tr>
+        <tr>
+          <td>Undefined（アンデファインド）</td>
+          <td>プリミティブ</td>
+          <td>未初期で実態がない、未定義の状態を表す</td>
+        </tr>
+        <tr>
+          <td>Symbol（シンボル）</td>
+          <td>プリミティブ</td>
+          <td>ES2015 から追加されたユニークかつ不変の値</td>
+        </tr>
+        <tr>
+          <td>Object（オブジェクト）</td>
+          <td>オブジェクト</td>
+          <td>オブジェクト型。プリミティブ型ではないものすべて</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>二項演算子</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>演算子</th>
+          <th>意味</th>
+          <th>例</th>
+          <th>例の意味</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>+</td>
+          <td>加算</td>
+          <td>a + b</td>
+          <td>a と b の和</td>
+        </tr>
+        <tr>
+          <td>-</td>
+          <td>減算</td>
+          <td>a - b</td>
+          <td>a から b を引いた値</td>
+        </tr>
+        <tr>
+          <td>*</td>
+          <td>乗算</td>
+          <td>a * b</td>
+          <td>a と b の積</td>
+        </tr>
+        <tr>
+          <td>/</td>
+          <td>除算</td>
+          <td>a / b</td>
+          <td>a を b で割った値</td>
+        </tr>
+        <tr>
+          <td>%</td>
+          <td>剰余</td>
+          <td>a % b</td>
+          <td>a を b で割った余り</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>単項演算子</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>演算子</th>
+          <th>意味</th>
+          <th>例</th>
+          <th>例の意味</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>++</td>
+          <td>インクリメント</td>
+          <td>i++</td>
+          <td>i の値を評価し、その後で i の値を 1 増やす</td>
+        </tr>
+        <tr>
+          <td>--</td>
+          <td>デクリメント</td>
+          <td>i--</td>
+          <td>i の値を評価し、その後で i の値を 1 減らす</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>三項演算子（条件演算子）</h2>
+    <code>
+      <pre>
+      // 構文
+      [結果] = [条件式] ? [true の場合の値] : [false の場合の値]
+
+      // 例
+      var a = 5
+      var parity = a %2 == 0 ? '偶数' : '奇数';
+      console.log(parity); // 奇数
+      </pre>
+    </code>
+
+    <h2>算術代入演算子</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>演算子</th>
+          <th>例</th>
+          <th>例の意味</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>+=</td>
+          <td>a += b</td>
+          <td>a = a + b</td>
+        </tr>
+        <tr>
+          <td>-=</td>
+          <td>a -= b</td>
+          <td>a = a - b</td>
+        </tr>
+        <tr>
+          <td>*=</td>
+          <td>a *= b</td>
+          <td>a = a * b</td>
+        </tr>
+        <tr>
+          <td>/=</td>
+          <td>a /= b</td>
+          <td>a = a / b</td>
+        </tr>
+        <tr>
+          <td>%=</td>
+          <td>a %= b</td>
+          <td>a = a % b</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>文字列の操作</h2>
+    <code>
+      <pre>
+      // 例
+      "Hello" + "World!" // Hello World!
+      "1" + "2" // 12
+      3 + "4" // 34
+      </pre>
+    </code>
+
+    <h2>関係演算子</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>演算子</th>
+          <th>意味</th>
+          <th>例</th>
+          <th>例の値</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>==</td>
+          <td>等価</td>
+          <td>a == b</td>
+          <td>a と b の値が等しいとみなせるときは true、それ以外は false</td>
+        </tr>
+        <tr>
+          <td>!=</td>
+          <td>等価でない</td>
+          <td>a != b</td>
+          <td>a と b の値が異なるとみなせるときは true、それ以外は false</td>
+        </tr>
+        <tr>
+          <td>===</td>
+          <td>同値</td>
+          <td>a === b</td>
+          <td>
+            a と b の値が同一である（型と値が等しい）ときは true、それ以外は
+            false
+          </td>
+        </tr>
+        <tr>
+          <td>!===</td>
+          <td>同値でない</td>
+          <td>a !== b</td>
+          <td>a と b の値が同一でないときは true、それ以外は false</td>
+        </tr>
+        <tr>
+          <td>&lt;</td>
+          <td>より小さい</td>
+          <td>a &lt; b</td>
+          <td>a の値が b の値より小さいときは true、それ以外は false</td>
+        </tr>
+        <tr>
+          <td>&gt;</td>
+          <td>より大きい</td>
+          <td>a &gt; b</td>
+          <td>a の値が b の値より大きいときは true、それ以外は false</td>
+        </tr>
+        <tr>
+          <td>&lt;＝</td>
+          <td>以下</td>
+          <td>a &lt;＝ b</td>
+          <td>a の値が b の値以下のときは true、それ以外は false</td>
+        </tr>
+        <tr>
+          <td>&gt;＝</td>
+          <td>以上</td>
+          <td>a &gt;＝ b</td>
+          <td>a の値が b の値以上のときは true、それ以外は false</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>抽象比較と厳密比較</h2>
+    <code>
+      <pre>
+      // 抽象比較
+      1 == 1 // true
+      1 == '1' // true
+      1 == true // true
+      '' == false // true
+      '0' == false // true
+
+      // 厳密比較
+      1 === 1 // true
+      1 === '1' // false
+      1 === true // false
+      '' === false // false
+      '0' === false // false
+      </pre>
+    </code>
+
+    <h2>論理演算子</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>演算子</th>
+          <th>意味</th>
+          <th>例</th>
+          <th>例の値</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>&&</td>
+          <td>論理積</td>
+          <td>a && b</td>
+          <td>a と b の両方が true のときは true、それ以外は false</td>
+        </tr>
+        <tr>
+          <td>||</td>
+          <td>論理和</td>
+          <td>a || b</td>
+          <td>a と b のいずれかが true のときは、true、それ以外は false</td>
+        </tr>
+        <tr>
+          <td>!</td>
+          <td>否定</td>
+          <td>!a</td>
+          <td>a が true のときは false、false のときは true</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>JavaScript の真偽判定</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>値</th>
+          <th>Boolean</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>0、-0、空文字（""）、null、undefined、NaN</td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>0 以外の数値、空文字以外の文字列、任意のオブジェクト</td>
+          <td>true</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>制御構文</h2>
+
+    <h3>if 文</h3>
+    <code>
+      <pre>
+      if ([条件式]) {
+        // 処理を書く
+      } else if ([条件式]) {
+        // 処理を書く
+      } else {
+        // 処理を書く
+      }
+      </pre>
+    </code>
+
+    <h3>switch 文</h3>
+    <code>
+      <pre>
+      switch([式]) {
+        case [値1]:
+          // 処理を書く
+          break;
+        case [値2]:
+          // 処理を書く
+          break;
+        default:
+          // 処理を書く
+      }
+      </pre>
+    </code>
+
+    <h3>for 文</h3>
+    <code>
+      <pre>
+      for ([初期化式]; [条件式]; [加算式]) {
+        // 処理を書く
+      }
+      </pre>
+    </code>
+
+    <h3>while 文</h3>
+    <code>
+      <pre>
+      while ([条件式]) {
+        // 処理を書く
+      }
+      </pre>
+    </code>
+
+    <h2>プログラムの記述方法</h2>
+
+    <h3>HTML 内に記述</h3>
+    <ul>
+      <li>HTML ファイル内のどこかの script タグ内に書く。</li>
+      <li>script タグは、body の閉じタグ直前が推奨。</li>
+    </ul>
+
+    <code>
+      <pre>
+      &lt;head&gt;
+        ~
+        &lt;script&gt;
+          // 処理を書く
+        &lt;/script&gt;
+        ~
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;script&gt;
+          // 処理を書く
+        &lt;/script&gt;
+      &lt;/body&gt;
+      </pre>
+    </code>
+
+    <h3>外部ファイルに記述する</h3>
+    <ul>
+      <li>外部ファイルの拡張子は「.js」にする。</li>
+      <li>
+        HTML ファイル内のどこかの script タグの src 属性にファイルパス<br />
+        または、URL を書く。
+      </li>
+      <li>script タグは、body の閉じタグ直前が推奨。</li>
+    </ul>
+
+    <code>
+      <pre>
+      &lt;head&gt;
+        &lt;script src="[js ファイルのパス]"&gt;&lt;/script&gt;
+        &lt;!-- または --&gt;
+        &lt;script src="[js ファイルの URL]"&gt;&lt;/script&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;script src="[js ファイルのパス]"&gt;&lt;/script&gt;
+        &lt;!-- または --&gt;
+        &lt;script src="[js ファイルの URL]"&gt;&lt;/script&gt;
+      &lt;/body&gt;
+      </pre>
+    </code>
+
+    <h3>HTML 属性に記述する</h3>
+    <ul>
+      <li>HTML タグのイベント属性に記述する。</li>
+      <li>ソースコードの可読性が悪くなるため、非推奨。</li>
+    </ul>
+
+    <code>
+      <pre>
+      // 属性
+      on[イベント名]="[js の処理]"
+
+      // 例
+      &lt;button onclick="alert('クリック！');"&gt;ボタン&lt;/button&gt;
+      </pre>
+    </code>
+
+    「配列」「オブジェクト」「関数」
+  </body>
+</html>
